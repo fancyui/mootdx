@@ -198,7 +198,7 @@ class StdQuotes(BaseQuotes):
         frequency = get_frequency(frequency)
         market = get_stock_market(symbol)
 
-        offset = (offset, 800)[offset > 800]
+        # offset = (offset, 800)[offset > 800]
         result = self.client.get_security_bars(int(frequency), int(market), str(symbol), int(start), int(offset))
 
         return to_data(result, symbol=symbol, client=self, **kwargs)
